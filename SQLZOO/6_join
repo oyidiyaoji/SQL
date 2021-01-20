@@ -31,3 +31,19 @@ where coach = 'Fernando Santos'
 select player
 from game join goal on game.id = goal.matchid
 where stadium = 'National Stadium, Warsaw'
+
+#8. Show the name of all players who scored a goal against Germany.
+select distinct(player)
+from game join goal on matchid = id 
+where (team1='GER' or team2='GER')
+
+#9. Show teamname and the total number of goals scored.
+select teamname, count(player)
+from eteam JOIN goal ON id=teamid
+group BY teamname
+
+#10. Show the stadium and the number of goals scored in each stadium.
+select stadium, count(player)
+from game join goal on id = matchid
+group by stadium
+    and teamid != 'GER'
