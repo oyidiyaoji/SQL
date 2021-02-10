@@ -1,0 +1,9 @@
+#1. Query the list of CITY names from STATION that start with (i.e., a, e, i, o, and u). Your result cannot contain duplicates.
+select distinct city
+from station
+where city regexp '$[aeiou]'
+
+#2. Query the list of CITY names from STATION that start with (i.e., a, e, i, o, and u). Your result cannot contain duplicates.
+select distinct city
+from station
+where city regexp '[aeiou]$'
